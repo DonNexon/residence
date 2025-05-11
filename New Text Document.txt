@@ -1,0 +1,35 @@
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 16px;"><a style="text-decoration: none; outline: none;" href="[Website Link]" target="_blank" rel="noopener"> <img style="height: 32px; vertical-align: middle;" src="cid:logo.png" alt="logo" height="32px"> </a>
+<p style="padding-top: 16px; border-top: 1px solid #eaeaea;">Hi {{name}},</p>
+<p>Thank you for reaching out to us! We have received your request: "{{title}}", and we'll do our best to process it within 3 Hours. for any delay please call 0788253535.</p>
+<p style="padding-top: 16px; border-top: 1px solid #eaeaea;">Best regards,<br>The Residence le Palmier Rwanda Ltd.</p>
+</div>
+
+
+
+
+
+<script>
+    (function() {
+      emailjs.init("PAUi5BOo4DoxKMMQG"); // Replace with your actual Public Key
+    })();
+  
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_7ttff8s', 'template_3n7fahb', this)
+        .then(function(response) {
+          alert("Booking email sent successfully!");
+        }, function(error) {
+          alert("Failed to send email: " + error.text);
+        });
+  
+      this.reset(); // Optional: Clear form after submission
+    });
+  </script>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("PAUi5BOo4DoxKMMQG"); // Replace with your actual EmailJS public key
+  })();
+</script>
